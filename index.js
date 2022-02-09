@@ -15,7 +15,10 @@ const fs = require('fs');
 
 const teamList = [];
 
-const creatHTML = require('./src/htmlTemplate.js');
+const createHTML = require('pageTemp.js');
+
+const DIST_DIR = path.resolve(__dirname, 'dist');
+const distPath = path.join(DIST_DIR, 'team.html');
 
 
 
@@ -164,8 +167,11 @@ function teamBuilder() {
 
 
 function finalize(){
-
-};
+    if (!fs.existsSync(DIST_DIR)) {
+        fs.mkdirSync(DIST_DIR);
+      }
+      fs.writeFileSync(distPath, createHTML(teamList), 'utf-8');
+    };
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                          //
