@@ -15,7 +15,7 @@ const fs = require('fs');
 
 const teamList = [];
 
-const createHTML = require('pageTemp.js');
+const createHTML = require('./pageTemp.js');
 
 const DIST_DIR = path.resolve(__dirname, 'dist');
 const distPath = path.join(DIST_DIR, 'team.html');
@@ -59,7 +59,6 @@ function enterManager(){
                 );
 
             teamList.push(manager);
-            /* userIds.push(response.managerId); */
 
             teamBuilder();
         });
@@ -94,7 +93,7 @@ function addEngineer() {
           response.engineerEmail,
           response.engineerGitHub,
         );
-        teamMembers.push(enginner);
+        teamList.push(engineer);
         teamBuilder();
       });
 };
@@ -151,15 +150,18 @@ function teamBuilder() {
             {type: "list",
             name: "selectEmployee",
             message: "Choose a team member to add: ",
-            choicese: [ "Engineer", "Intern", "Finished"],
+            choices: ['Engineer','Intern',"Finished",], 
             },    
         ])
-        .then((selection) => {
-            if (selection === "Engineer"){
+        .then((userChoice) => {
+            if (userChoice.selectEmployee === "Engineer") {
+                console.log(userChoice.selectEmployee);
                 addEngineer();
-            } else if (selection === "Intern"){
+            } else if (userChoice.selectEmployee === "Intern") {
+                console.log(userChoice.selectEmployee);
                 addIntern();
             } else {
+                console.log(userChoice.selectEmployee);
                 finalize();
             };
         });

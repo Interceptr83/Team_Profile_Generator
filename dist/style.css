@@ -1,7 +1,7 @@
 .pageCard {
     min-height: 100vh;
     background-color: white;
-    padding: 5px;
+    padding: 11px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -9,22 +9,32 @@ header {
     text-align: "center";
     background-color: black;
     color: white;
+    text-align: center;
+    border-radius: 10px 10px 0px 0px;
 }
 
-.managerCard {
-    background-color: rgb(250, 17, 17);
-    padding: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.manager-header {
+    background-color: rgb(0, 0, 156);
+    color: white;
+}
+.engineer-header {
+    background-color: orange;
+    color: black;
+}
+.intern-header {
+    background-color: rgb(41, 177, 0);
+    color: black;
 }
 
-.engineerCard {
-    background-color: rgb(249, 253, 4);
+.card {
+    background-color: rgb(255, 255, 255);
     padding: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font-size: 1.5rem;
+    text-align: center;
+    margin: 2rem 25% 2rem 25%;
 }
 
-.internCard {
-    background-color: rgb(9, 226, 27);
-    padding: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ul li {
+    font-size: 1.5rem;  
 }
